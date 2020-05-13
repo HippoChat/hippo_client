@@ -17,6 +17,9 @@ class ChatFragment : Fragment(){
     private lateinit var tvSearch: TextView
     private lateinit var btSearch: Button
 
+    private lateinit var tvFinishChat: TextView
+    private lateinit var btFinish: Button
+
     private var isChatting = true
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -38,6 +41,9 @@ class ChatFragment : Fragment(){
         tvSearch = view.findViewById(R.id.tvSearchFriend)
         btSearch = view.findViewById(R.id.bt_search)
 
+        tvFinishChat = view.findViewById(R.id.tvFinishChat)
+        btFinish = view.findViewById(R.id.bt_finish)
+
         changeSearchFriendView()
     }
 
@@ -46,10 +52,16 @@ class ChatFragment : Fragment(){
             ivSearchFriend.visibility = View.GONE
             tvSearch.visibility = View.GONE
             btSearch.visibility = View.GONE
+
+            tvFinishChat.visibility = View.VISIBLE
+            btSearch.visibility = View.VISIBLE
         } else {
             ivSearchFriend.visibility = View.VISIBLE
             tvSearch.visibility = View.VISIBLE
             btSearch.visibility = View.VISIBLE
+
+            tvFinishChat.visibility = View.GONE
+            btSearch.visibility = View.GONE
         }
     }
 }

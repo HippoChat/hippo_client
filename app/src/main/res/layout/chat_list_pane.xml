@@ -33,35 +33,5 @@
         app:layout_constraintStart_toEndOf="@+id/avatar"
         app:layout_constraintTop_toBottomOf="@+id/userName" />
 
-    <TextView
-        android:id="@+id/tvFinishChat"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="228dp"
-        android:fontFamily="@font/roboto"
-        android:text="@string/finish"
-        android:textAlignment="center"
-        android:textColor="@color/dark"
-        android:textSize="18sp"
-        android:visibility="visible"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/bt_finish"
-        android:layout_width="256dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="48dp"
-        android:background="@color/darkBlue"
-        android:fontFamily="@font/roboto"
-        android:text="@string/finish_chat"
-        android:textAllCaps="false"
-        android:textColor="@color/white"
-        android:textSize="24sp"
-        android:visibility="visible"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvFinishChat" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
