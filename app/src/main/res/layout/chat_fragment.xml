@@ -1,90 +1,102 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
-    <ViewStub
-        android:id="@+id/stubChat"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout="@layout/chat_list_pane"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
 
-    <ImageView
-        android:id="@+id/ivChatEmpty"
-        android:layout_width="200dp"
-        android:layout_height="172dp"
-        android:layout_marginTop="96dp"
-        android:visibility="gone"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/chat_empty" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/tvSearchFriend"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
-        android:fontFamily="@font/roboto"
-        android:text="@string/searchFriend"
-        android:textAlignment="center"
-        android:textColor="@color/dark"
-        android:textSize="18sp"
-        android:visibility="gone"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ivChatEmpty" />
+            <ViewStub
+                android:id="@+id/stubChat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout="@layout/chat_list_pane"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/bt_search"
-        android:layout_width="256dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="72dp"
-        android:background="@color/darkBlue"
-        android:fontFamily="@font/roboto"
-        android:text="@string/search"
-        android:textAllCaps="false"
-        android:textColor="@color/white"
-        android:textSize="24sp"
-        android:visibility="gone"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvSearchFriend" />
+            <ImageView
+                android:id="@+id/ivChatEmpty"
+                android:layout_width="200dp"
+                android:layout_height="172dp"
+                android:layout_marginTop="96dp"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/chat_empty" />
 
-    <TextView
-        android:id="@+id/tvFinishChat"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="228dp"
-        android:fontFamily="@font/roboto"
-        android:text="@string/finish"
-        android:textAlignment="center"
-        android:textColor="@color/dark"
-        android:textSize="18sp"
-        android:visibility="gone"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+            <TextView
+                android:id="@+id/tvSearchFriend"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="48dp"
+                android:fontFamily="@font/roboto"
+                android:text="@string/searchFriend"
+                android:textAlignment="center"
+                android:textColor="@color/dark"
+                android:textSize="18sp"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ivChatEmpty" />
 
-    <Button
-        android:id="@+id/bt_finish"
-        android:layout_width="256dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="48dp"
-        android:background="@color/darkBlue"
-        android:fontFamily="@font/roboto"
-        android:text="@string/finish_chat"
-        android:textAllCaps="false"
-        android:textColor="@color/white"
-        android:textSize="24sp"
-        android:visibility="gone"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvFinishChat" />
+            <Button
+                android:id="@+id/bt_search"
+                android:layout_width="256dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="72dp"
+                android:background="@color/darkBlue"
+                android:fontFamily="@font/roboto"
+                android:text="@string/search"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="24sp"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvSearchFriend" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+            <TextView
+                android:id="@+id/tvFinishChat"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="228dp"
+                android:fontFamily="@font/roboto"
+                android:text="@string/finish"
+                android:textAlignment="center"
+                android:textColor="@color/dark"
+                android:textSize="18sp"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/bt_finish"
+                android:layout_width="256dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="48dp"
+                android:background="@color/darkBlue"
+                android:fontFamily="@font/roboto"
+                android:text="@string/finish_chat"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="24sp"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvFinishChat" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</LinearLayout>
