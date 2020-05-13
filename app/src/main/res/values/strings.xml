@@ -14,4 +14,9 @@
     <string name="tab_3">Settings</string>
     <string name="searchFriend">Let’s search for a new friend!</string>
     <string name="search">Search!</string>
+    <string name="finish">Want to find a new person?</string>
+    <string name="finish_chat">Finish chat</string>
+    <string name="menu_finish">Finish chat</string>
+    <string name="menu_favorite">Add to friends</string>
+    <string name="menu_block">Report user</string>
 </resources>
