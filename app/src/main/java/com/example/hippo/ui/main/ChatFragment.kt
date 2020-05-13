@@ -44,6 +44,14 @@ class ChatFragment : Fragment(){
         tvFinishChat = view.findViewById(R.id.tvFinishChat)
         btFinish = view.findViewById(R.id.bt_finish)
 
+        btSearch.setOnClickListener {
+            isChatting = true
+            changeSearchFriendView() }
+
+        btFinish.setOnClickListener {
+            isChatting = false
+            changeSearchFriendView() }
+
         changeSearchFriendView()
     }
 
@@ -54,14 +62,14 @@ class ChatFragment : Fragment(){
             btSearch.visibility = View.GONE
 
             tvFinishChat.visibility = View.VISIBLE
-            btSearch.visibility = View.VISIBLE
+            btFinish.visibility = View.VISIBLE
         } else {
             ivSearchFriend.visibility = View.VISIBLE
             tvSearch.visibility = View.VISIBLE
             btSearch.visibility = View.VISIBLE
 
             tvFinishChat.visibility = View.GONE
-            btSearch.visibility = View.GONE
+            btFinish.visibility = View.GONE
         }
     }
 }
