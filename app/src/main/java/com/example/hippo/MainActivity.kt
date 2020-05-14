@@ -12,6 +12,7 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import com.example.hippo.ui.main.SectionsPagerAdapter
+import com.example.hippo.db.getAppDatabaseInstance
 
 class MainActivity : AppCompatActivity() {
 
@@ -24,5 +25,6 @@ class MainActivity : AppCompatActivity() {
         val tabs: TabLayout = findViewById(R.id.tabs)
         tabs.setupWithViewPager(viewPager)
 
+        getAppDatabaseInstance().userDao().loadById(42)
     }
 }
