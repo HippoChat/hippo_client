@@ -13,8 +13,8 @@ data class Status(
 data class SignUp
     (
     val status: Int,
-    val error_message: String,
-    val me: GeneralInfo
+    val error_message: String?,
+    val me: GeneralInfo?
 ) : Parcelable
 
 @Parcelize

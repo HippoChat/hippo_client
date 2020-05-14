@@ -7,5 +7,10 @@ import kotlinx.android.parcel.Parcelize
 data class Favorites(
     val status: Int,
     val error_message: String,
-    val bookmarks: List<Int>
+    val bookmarks: List<Favorite>
+) : Parcelable
+
+@Parcelize
+data class Favorite(
+    val user_id: Int
 ) : Parcelable

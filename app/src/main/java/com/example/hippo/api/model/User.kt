@@ -20,7 +20,7 @@ data class UserInfo(
 ) : Parcelable
 
 @Parcelize
-data class PartnerInfo (
+data class PartnerInfo(
     val status: Int,
     val error_message: String,
     val partner_id: Int

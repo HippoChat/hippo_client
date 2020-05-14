@@ -1,6 +1,7 @@
 package com.example.hippo.api
 
 import com.example.hippo.api.model.Message
+import com.example.hippo.api.model.Messages
 import io.reactivex.Observable
 import retrofit2.Call
 import retrofit2.http.Body
@@ -16,5 +17,5 @@ interface ChatService {
     ): Call<Message>
 
     @POST("/chat/messages")
-    fun getMessages(): Observable<Message>
+    fun getMessages(): Observable<Messages>
 }
