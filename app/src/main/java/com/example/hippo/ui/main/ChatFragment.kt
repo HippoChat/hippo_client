@@ -1,5 +1,6 @@
 package com.example.hippo.ui.main
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -20,7 +21,7 @@ class ChatFragment : Fragment(){
     private lateinit var tvFinishChat: TextView
     private lateinit var btFinish: Button
 
-    private var isChatting = true
+    private var isChatting = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -52,6 +53,8 @@ class ChatFragment : Fragment(){
             isChatting = false
             changeSearchFriendView() }
 
+        chat_pane.setOnClickListener { startActivity(Intent(activity, ChatActivity::class.java)) }
+
         changeSearchFriendView()
     }
 
@@ -63,6 +66,7 @@ class ChatFragment : Fragment(){
 
             tvFinishChat.visibility = View.VISIBLE
             btFinish.visibility = View.VISIBLE
+            chat_pane.visibility = View.VISIBLE
         } else {
             ivSearchFriend.visibility = View.VISIBLE
             tvSearch.visibility = View.VISIBLE
@@ -70,6 +74,7 @@ class ChatFragment : Fragment(){
 
             tvFinishChat.visibility = View.GONE
             btFinish.visibility = View.GONE
+            chat_pane.visibility = View.GONE
         }
     }
 }
