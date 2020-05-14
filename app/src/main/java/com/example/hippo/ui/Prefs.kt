@@ -22,12 +22,23 @@ object SecurePrefs {
             )
     }
 
+    fun putId(myId: Int) {
+        sharedPreferences.edit().putInt(idKey, myId).apply()
+    }
+
+    fun getId() = sharedPreferences.getInt(idKey, -1)
+
     fun putNumber(number: String) {
         sharedPreferences.edit().putString(numberKey, number).apply()
     }
 
     fun getNumber() = sharedPreferences.getString(numberKey, "").toString()
 
+    fun putCode(verificationCode: String) {
+        sharedPreferences.edit().putString(verificationCodeKey, verificationCode).apply()
+    }
+
+    fun getCode() = sharedPreferences.getString(verificationCodeKey, "").toString()
 
     fun putName(name: String) {
         sharedPreferences.edit().putString(nameKey, name).apply()
@@ -48,7 +59,9 @@ object SecurePrefs {
 
     fun getLanguage() = sharedPreferences.getString(languageKey, "").toString()
 
+    private const val idKey = "id"
     private const val numberKey = "number"
+    private const val verificationCodeKey = "verificationCode"
     private const val nameKey = "name"
     private const val ageKey = "age"
     private const val languageKey = "language"
