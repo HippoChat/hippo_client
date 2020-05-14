@@ -11,7 +11,7 @@ object SecurePrefs {
 
     private lateinit var sharedPreferences: SharedPreferences
 
-    fun createEncryptedPreferences(context: Context){
+    fun createEncryptedPreferences(context: Context) {
         sharedPreferences = EncryptedSharedPreferences
             .create(
                 "secure_data.txt",
@@ -22,33 +22,46 @@ object SecurePrefs {
             )
     }
 
-    fun putNumber(number: String){
+    fun putId(myId: Int) {
+        sharedPreferences.edit().putInt(idKey, myId).apply()
+    }
+
+    fun getId() = sharedPreferences.getInt(idKey, -1)
+
+    fun putNumber(number: String) {
         sharedPreferences.edit().putString(numberKey, number).apply()
     }
 
     fun getNumber() = sharedPreferences.getString(numberKey, "").toString()
 
+    fun putCode(verificationCode: String) {
+        sharedPreferences.edit().putString(verificationCodeKey, verificationCode).apply()
+    }
 
-    fun putName(name: String){
+    fun getCode() = sharedPreferences.getString(verificationCodeKey, "").toString()
+
+    fun putName(name: String) {
         sharedPreferences.edit().putString(nameKey, name).apply()
     }
 
     fun getName() = sharedPreferences.getString(nameKey, "").toString()
 
 
-    fun putAge(age: String){
+    fun putAge(age: String) {
         sharedPreferences.edit().putString(ageKey, age).apply()
     }
 
     fun getAge() = sharedPreferences.getString(ageKey, "").toString()
 
-    fun putLanguage(language: String){
+    fun putLanguage(language: String) {
         sharedPreferences.edit().putString(languageKey, language).apply()
     }
 
     fun getLanguage() = sharedPreferences.getString(languageKey, "").toString()
 
+    private const val idKey = "id"
     private const val numberKey = "number"
+    private const val verificationCodeKey = "verificationCode"
     private const val nameKey = "name"
     private const val ageKey = "age"
     private const val languageKey = "language"
