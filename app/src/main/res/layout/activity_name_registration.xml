@@ -7,7 +7,7 @@
     android:layout_height="match_parent">
 
     <EditText
-        android:id="@+id/nameField"
+        android:id="@+id/tvNameSettings"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="340dp"
@@ -27,7 +27,7 @@
         android:text="@string/personalInfo"
         android:textColor="@color/grey"
         android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/nameField"
+        app:layout_constraintBottom_toTopOf="@+id/tvNameSettings"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -60,7 +60,7 @@
         android:text="@string/go"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nameField"
+        app:layout_constraintTop_toBottomOf="@+id/tvNameSettings"
         tools:visibility="invisible" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

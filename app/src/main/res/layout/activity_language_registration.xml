@@ -14,7 +14,7 @@
         android:text="@string/go"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/languageSelector"
+        app:layout_constraintTop_toBottomOf="@+id/spLanguageSettings"
         tools:visibility="invisible" />
 
     <ImageView
@@ -35,7 +35,7 @@
         android:text="@string/languageInfo"
         android:textColor="@color/grey"
         android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/languageSelector"
+        app:layout_constraintBottom_toTopOf="@+id/spLanguageSettings"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -51,7 +51,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <Spinner
-        android:id="@+id/languageSelector"
+        android:id="@+id/spLanguageSettings"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="340dp"
