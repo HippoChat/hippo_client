@@ -18,6 +18,9 @@ fun Context.getAppDatabaseInstance(): AppDatabase {
         AppDatabase::class.java, "hippo"
     )
         .allowMainThreadQueries()
+        .addMigrations(
+            // reserved for future use
+        )
         .fallbackToDestructiveMigration()
         .build()
 }
