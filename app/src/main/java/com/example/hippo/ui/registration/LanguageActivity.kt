@@ -14,7 +14,7 @@ class LanguageActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_language_registration)
         registrationLanguageButton.setOnClickListener {
-            SecurePrefs.putLanguage(languageSelector.selectedItemId.toString())
+            SecurePrefs.putLanguage(spLanguageSettings.selectedItemId.toString())
             startActivity(Intent(this, MainActivity::class.java))
         }
     }

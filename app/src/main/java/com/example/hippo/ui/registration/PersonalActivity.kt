@@ -15,9 +15,9 @@ class PersonalActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_name_registration)
         registrationNameButton.setOnClickListener {
-            nameField.validate("Wrong name") { s -> s.isValidName() }
+            tvNameSettings.validate("Wrong name") { s -> s.isValidName() }
 
-            nameField.text.toString().run {
+            tvNameSettings.text.toString().run {
                 if(isValidName())
                 {
                     SecurePrefs.putName(this)
