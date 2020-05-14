@@ -24,7 +24,7 @@
         android:text="@string/personalInfo"
         android:textColor="@color/grey"
         android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/ageSelector"
+        app:layout_constraintBottom_toTopOf="@+id/spAgeSettings"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -40,7 +40,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <Spinner
-        android:id="@+id/ageSelector"
+        android:id="@+id/spAgeSettings"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="340dp"
@@ -59,7 +59,7 @@
         android:text="@string/go"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ageSelector"
+        app:layout_constraintTop_toBottomOf="@+id/spAgeSettings"
         tools:visibility="invisible" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
