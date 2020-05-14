@@ -11,7 +11,7 @@ object SecurePrefs {
 
     private lateinit var sharedPreferences: SharedPreferences
 
-    fun createEncryptedPreferences(context: Context){
+    fun createEncryptedPreferences(context: Context) {
         sharedPreferences = EncryptedSharedPreferences
             .create(
                 "secure_data.txt",
@@ -22,27 +22,27 @@ object SecurePrefs {
             )
     }
 
-    fun putNumber(number: String){
+    fun putNumber(number: String) {
         sharedPreferences.edit().putString(numberKey, number).apply()
     }
 
     fun getNumber() = sharedPreferences.getString(numberKey, "").toString()
 
 
-    fun putName(name: String){
+    fun putName(name: String) {
         sharedPreferences.edit().putString(nameKey, name).apply()
     }
 
     fun getName() = sharedPreferences.getString(nameKey, "").toString()
 
 
-    fun putAge(age: String){
+    fun putAge(age: String) {
         sharedPreferences.edit().putString(ageKey, age).apply()
     }
 
     fun getAge() = sharedPreferences.getString(ageKey, "").toString()
 
-    fun putLanguage(language: String){
+    fun putLanguage(language: String) {
         sharedPreferences.edit().putString(languageKey, language).apply()
     }
 
