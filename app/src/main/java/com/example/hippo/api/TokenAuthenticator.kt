@@ -9,7 +9,7 @@ class TokenAuthenticator : Authenticator {
 
     override fun authenticate(route: Route?, response: Response) : Request? {
         val token = getNewToken()
-        return response.request().newBuilder()
+        return response.request.newBuilder()
             .header("Authorization", token).build()
     }
 
