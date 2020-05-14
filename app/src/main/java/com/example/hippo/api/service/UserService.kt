@@ -1,4 +1,4 @@
-package com.example.hippo.api
+package com.example.hippo.api.service
 
 import com.example.hippo.api.model.PartnerInfo
 import com.example.hippo.api.model.SignUp
