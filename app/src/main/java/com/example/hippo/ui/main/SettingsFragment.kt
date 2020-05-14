@@ -6,12 +6,21 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.hippo.R
+import com.example.hippo.ui.SecurePrefs
+import kotlinx.android.synthetic.main.settings_fragment.*
 
 class SettingsFragment : Fragment(){
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+        initData()
     }
 
+    private fun initData(){
+        nameField.setText(SecurePrefs.getName())
+        ageSelector.setSelection(SecurePrefs.getAge().toInt())
+        languageSelector.setSelection(SecurePrefs.getLanguage().toInt())
+    }
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
