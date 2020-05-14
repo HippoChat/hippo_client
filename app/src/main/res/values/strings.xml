@@ -19,4 +19,5 @@
     <string name="menu_finish">Finish chat</string>
     <string name="menu_favorite">Add to friends</string>
     <string name="menu_block">Report user</string>
+    <string name="search_progress">Searching for a friend...\nPlease, wait</string>
 </resources>
