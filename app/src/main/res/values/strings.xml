@@ -3,6 +3,7 @@
     <string name="reg_phone">Please enter your phone number</string>
     <string name="reg_code">Verification code</string>
     <string name="go">Go!</string>
+    <string name="next">Next</string>
     <string name="personal_info">You can add your real info or make it up\nYou can change it any time in the settings</string>
     <string name="language_info">Select the language you want to chat in\nYou can change it any time in the settings</string>
     <string name="personal_info_header">Personal info</string>
