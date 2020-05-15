@@ -22,4 +22,5 @@
     <string name="search_progress">Searching for a friend...\nPlease, wait</string>
     <string name="save">Save</string>
     <string name="logout"><u>Sign out</u></string>
+    <string name="select_avatar">Select avatar</string>
 </resources>
