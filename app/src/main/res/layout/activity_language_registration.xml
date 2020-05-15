@@ -15,7 +15,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="@dimen/dp_96"
-        app:srcCompat="@drawable/personal_info" />
+        app:srcCompat="@drawable/pic_personal_info" />
 
     <TextView
         android:id="@+id/textView5"

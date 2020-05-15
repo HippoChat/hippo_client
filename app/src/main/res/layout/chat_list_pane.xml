@@ -11,7 +11,7 @@
         android:layout_height="75dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/hippo_splash" />
+        app:srcCompat="@drawable/pic_hippo_splash" />
 
     <TextView
         android:id="@+id/userName"

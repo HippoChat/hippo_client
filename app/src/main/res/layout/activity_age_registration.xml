@@ -14,7 +14,7 @@
         app:layout_constraintBottom_toTopOf="@+id/textView5"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/personal_info" />
+        app:srcCompat="@drawable/pic_personal_info" />
 
     <TextView
         android:id="@+id/textView4"

@@ -34,7 +34,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/chat_empty" />
+                app:srcCompat="@drawable/pic_no_random_chat" />
 
             <TextView
                 android:id="@+id/tvSearchFriend"

@@ -17,7 +17,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:logo="@mipmap/ic_launcher"
-        app:navigationIcon="@drawable/arrow_back"
+        app:navigationIcon="@drawable/ic_arrow_back"
         app:title="User Name" />
 
     <EditText
