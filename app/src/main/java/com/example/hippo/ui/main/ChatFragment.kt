@@ -11,7 +11,7 @@ import androidx.fragment.app.Fragment
 import com.example.hippo.R
 import kotlinx.android.synthetic.main.chat_fragment.*
 
-class ChatFragment : Fragment(){
+class ChatFragment : Fragment() {
     private lateinit var ivSearchFriend: ImageView
     private lateinit var tvSearch: TextView
     private lateinit var btSearch: Button
@@ -45,17 +45,19 @@ class ChatFragment : Fragment(){
 
         btSearch.setOnClickListener {
             isChatting = true
-            changeSearchFriendView() }
+            changeSearchFriendView()
+        }
 
         btFinish.setOnClickListener {
             isChatting = false
-            changeSearchFriendView() }
+            changeSearchFriendView()
+        }
 
         changeSearchFriendView()
     }
 
-    private fun changeSearchFriendView(){
-        if (isChatting){
+    private fun changeSearchFriendView() {
+        if (isChatting) {
             ivSearchFriend.visibility = View.GONE
             tvSearch.visibility = View.GONE
             btSearch.visibility = View.GONE
