@@ -32,7 +32,6 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
         android:text="Last Message"
         android:textColor="@color/grey"
         android:textSize="@dimen/sp_18"
