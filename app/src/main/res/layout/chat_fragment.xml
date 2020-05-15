@@ -15,10 +15,12 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <include
-                layout="@layout/chat_list_pane"
+            <androidx.fragment.app.FragmentContainerView
                 android:id="@+id/chat_pane"
                 android:visibility="gone"
+                android:name="com.example.hippo.ui.main.ChatPaneFragment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
