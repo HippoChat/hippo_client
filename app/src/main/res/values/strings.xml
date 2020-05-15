@@ -20,10 +20,9 @@
     <string name="menu_finish">Finish chat</string>
     <string name="menu_favorite">Add to friends</string>
     <string name="menu_block">Report user</string>
-    <string name="search_progress">Searching for a friend...\nPlease, wait</string>
+    <string name="search_progress">Searching for a friend…\nPlease, wait</string>
     <string name="save">Save</string>
     <string name="logout">Sign out</string>
     <string name="no_favorite_friends">You do not have favorite friends for now :(</string>
-    <string name="logout"><u>Sign out</u></string>
     <string name="select_avatar">Select avatar</string>
 </resources>

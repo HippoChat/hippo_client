@@ -13,7 +13,9 @@ class SplashActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
         Handler().postDelayed({
-            startActivity(Intent(this, PhoneActivity::class.java))
+            val start = Intent(this, PhoneActivity::class.java)
+            start.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK)
+            startActivity(start)
         }, 2000)
     }
 }
