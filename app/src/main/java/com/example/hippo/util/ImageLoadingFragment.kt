@@ -2,12 +2,9 @@ package com.example.hippo.util
 
 import android.app.Activity
 import android.content.Intent
-import android.graphics.Bitmap
-import android.graphics.BitmapFactory
 import android.net.Uri
 import android.os.Bundle
 import android.provider.MediaStore
-import android.util.Base64
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -15,12 +12,9 @@ import androidx.fragment.app.Fragment
 import com.example.hippo.PICK_IMAGE_ACTIVITY
 import com.example.hippo.R
 import kotlinx.android.synthetic.main.image_loading_fragment.*
-import java.io.ByteArrayOutputStream
 import java.io.FileDescriptor
 
 class ImageLoadingFragment : Fragment() {
-    private var imageString: String = ""
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -41,13 +35,17 @@ class ImageLoadingFragment : Fragment() {
             val uri: Uri = data.data!!
             val parcelFileDescriptor = activity!!.contentResolver.openFileDescriptor(uri, "r")
             val fileDescriptor: FileDescriptor = parcelFileDescriptor!!.fileDescriptor
-            val bitmap: Bitmap = BitmapFactory.decodeFileDescriptor(fileDescriptor)
-            val baos = ByteArrayOutputStream()
-            bitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos)
-            val imageBytes: ByteArray = baos.toByteArray()
-            imageString = Base64.encodeToString(imageBytes, Base64.DEFAULT)
 
-            setImage(imageString)
+            // Using setImageBitmap here to make sure the user sees the image as it's supposed to be
+            // I have suspicions that encoding changes the colors somewhat due to JPEG recoding
+            // However, I am not good with colors or design, so maybe I'm wrong
+            avatar.setImageBitmap(
+                ImageEncoder.instance.decodeImage(
+                    ImageEncoder.instance.encodeImage(
+                        fileDescriptor
+                    )
+                )
+            )
         }
     }
 
@@ -68,10 +66,4 @@ class ImageLoadingFragment : Fragment() {
         startActivityForResult(chooserIntent, PICK_IMAGE_ACTIVITY)
     }
 
-    public fun setImage(imageBase64: String) {
-        imageString = imageBase64
-        val imageBytes = Base64.decode(imageString, Base64.DEFAULT)
-        val decodedImage: Bitmap = BitmapFactory.decodeByteArray(imageBytes, 0, imageBytes.size)
-        avatar.setImageBitmap(decodedImage)
-    }
 }
