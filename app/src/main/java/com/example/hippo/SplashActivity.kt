@@ -15,6 +15,7 @@ class SplashActivity : AppCompatActivity() {
         Handler().postDelayed({
             val start = Intent(this, PhoneActivity::class.java)
             start.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK)
+            start.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
             startActivity(start)
         }, 2000)
     }

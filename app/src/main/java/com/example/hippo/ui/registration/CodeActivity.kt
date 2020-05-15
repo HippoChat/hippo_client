@@ -15,8 +15,12 @@ class CodeActivity : AppCompatActivity() {
         setContentView(R.layout.activity_code_registration)
         bt_verification.setOnClickListener {
             et_verification_code.validate("Wrong code") { s -> s.isValidCode() }
-            if(et_verification_code.text.toString().isValidCode())
-            startActivity(Intent(this, PersonalActivity::class.java))
+            if (et_verification_code.text.toString().isValidCode()) {
+                val newStart = Intent(this, PersonalActivity::class.java)
+                newStart.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK)
+                newStart.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                startActivity(newStart)
+            }
         }
     }
 }

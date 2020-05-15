@@ -20,6 +20,9 @@ class LanguageActivity : AppCompatActivity() {
 //                Log.d("AUTH", "signed up: $it")
 //            }
 //        }
-        startActivity(Intent(this, MainActivity::class.java))
+        val newStart = Intent(this, MainActivity::class.java)
+        newStart.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK)
+        newStart.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+        startActivity(newStart)
     }
 }
