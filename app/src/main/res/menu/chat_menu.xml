@@ -4,11 +4,14 @@
 
     <item
         android:id="@+id/miFinish"
-        android:title="@string/finish_chat" />
+        android:icon="@drawable/bin"
+        android:title="@string/menu_finish" />
     <item
         android:id="@+id/miFriend"
-        android:title="Add to friends" />
+        android:icon="@drawable/heart"
+        android:title="@string/menu_favorite" />
     <item
         android:id="@+id/miReport"
-        android:title="Report user" />
+        android:icon="@drawable/ban"
+        android:title="@string/menu_block" />
 </menu>
