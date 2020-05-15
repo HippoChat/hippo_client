@@ -20,9 +20,11 @@ class LanguageActivity : AppCompatActivity() {
 //                Log.d("AUTH", "signed up: $it")
 //            }
 //        }
-        val newStart = Intent(this, MainActivity::class.java)
-        newStart.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK)
-        newStart.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-        startActivity(newStart)
+        bt_registration_lang.setOnClickListener {
+            val newStart = Intent(this, MainActivity::class.java)
+            newStart.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK)
+            newStart.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+            startActivity(newStart)
+        }
     }
 }

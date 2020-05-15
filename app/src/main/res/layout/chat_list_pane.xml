@@ -13,6 +13,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/pic_hippo_splash"
+        app:layout_constraintBottom_toBottomOf="parent"
         tools:srcCompat="@drawable/pic_hippo_splash" />
 
     <TextView
@@ -25,7 +26,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/iv_user_pic"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="User Namovich" />
+        tools:text="User Namovich"/>
 
     <TextView
         android:id="@+id/tv_user_last_msg"
