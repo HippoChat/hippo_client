@@ -21,16 +21,21 @@ class ChatActivity : AppCompatActivity() {
 
         rv_messages.addItemDecoration(
             MarginItemDecoration(
-            resources.getDimension(R.dimen.dp_8).toInt())
+                resources.getDimension(R.dimen.dp_8).toInt()
+            )
         )
 
         setSupportActionBar(chatBar)
 
         rv_messages.adapter = ChatMessageAdapter(
             this,
-            listOf(Message("Hello", true),
+            listOf(
+                Message("Hello", true),
                 Message("Goodbye", false),
-                Message("Really Long Message, Like hecking long, as in, extremely fucking long long long message of longness", false),
+                Message(
+                    "Really Long Message, Like hecking long, as in, extremely fucking long long long message of longness",
+                    false
+                ),
                 Message("Hello", true),
                 Message("Hello", true),
                 Message("Hello", true),
@@ -48,7 +53,9 @@ class ChatActivity : AppCompatActivity() {
                 Message("Hello", true),
                 Message("Hello", true),
                 Message("Hello", true),
-                Message("Hello", true)))
+                Message("Hello", true)
+            )
+        )
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {

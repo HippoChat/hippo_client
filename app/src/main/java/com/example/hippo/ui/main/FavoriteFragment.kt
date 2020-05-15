@@ -10,8 +10,8 @@ import androidx.fragment.app.Fragment
 import com.example.hippo.R
 import kotlinx.android.synthetic.main.favorite_fragment.*
 
-class FavoriteFragment : Fragment(){
-    private val hasFriends = false
+class FavoriteFragment : Fragment() {
+    private val hasFriends = true
 
     private lateinit var ivNoFavFriends: ImageView
     private lateinit var tvNoFavFriends: TextView
@@ -34,12 +34,12 @@ class FavoriteFragment : Fragment(){
     }
 
 
-    private fun changeFavFriendView(){
-        if (hasFriends){
+    private fun changeFavFriendView() {
+        if (hasFriends) {
             fav_chat_pane.visibility = View.VISIBLE
             ivNoFavFriends.visibility = View.GONE
             tvNoFavFriends.visibility = View.GONE
-        }else{
+        } else {
             fav_chat_pane.visibility = View.GONE
             ivNoFavFriends.visibility = View.VISIBLE
             tvNoFavFriends.visibility = View.VISIBLE

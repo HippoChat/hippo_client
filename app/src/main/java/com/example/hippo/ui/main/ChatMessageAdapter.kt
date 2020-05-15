@@ -12,11 +12,13 @@ import com.example.hippo.util.MarginItemDecoration
 import kotlinx.android.synthetic.main.chat_bubble.view.*
 
 
-class ChatMessageAdapter(private var context: Context, private var elements: List<Message>) : RecyclerView.Adapter<ChatMessageAdapter.ViewHolder>() {
+class ChatMessageAdapter(private var context: Context, private var elements: List<Message>) :
+    RecyclerView.Adapter<ChatMessageAdapter.ViewHolder>() {
     class ViewHolder(val view: View) : RecyclerView.ViewHolder(view)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val view: View = LayoutInflater.from(parent.context).inflate(R.layout.chat_bubble, parent, false)
+        val view: View =
+            LayoutInflater.from(parent.context).inflate(R.layout.chat_bubble, parent, false)
 
         return ViewHolder(view)
     }
@@ -27,7 +29,7 @@ class ChatMessageAdapter(private var context: Context, private var elements: Lis
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.view.tv_msg.text = elements[position].message
-        if(elements[position].received) {
+        if (elements[position].received) {
             holder.view.backLayout.background.setColorFilter(
                 context.resources.getColor(R.color.chatBubbleDark),
                 PorterDuff.Mode.SRC_IN
