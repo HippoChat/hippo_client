@@ -1,4 +1,4 @@
-package com.example.hippo.util
+package com.example.hippo.ui.main
 
 import android.app.Activity
 import android.content.Intent
@@ -11,10 +11,11 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.hippo.PICK_IMAGE_ACTIVITY
 import com.example.hippo.R
+import com.example.hippo.util.ImageEncoder
 import kotlinx.android.synthetic.main.image_loading_fragment.*
 import java.io.FileDescriptor
 
-class ImageLoadingFragment : Fragment() {
+class AvatarLoadingFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?

@@ -18,7 +18,7 @@
 
             <androidx.fragment.app.FragmentContainerView
                 android:id="@+id/btAvatar"
-                android:name="com.example.hippo.util.ImageLoadingFragment"
+                android:name="com.example.hippo.ui.main.AvatarLoadingFragment"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="64dp"
