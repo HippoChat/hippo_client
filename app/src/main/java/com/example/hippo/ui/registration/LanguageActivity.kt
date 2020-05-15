@@ -21,6 +21,7 @@ class LanguageActivity : AppCompatActivity() {
 //            }
 //        }
         bt_registration_lang.setOnClickListener {
+            SecurePrefs.putLanguage(sp_language_settings.selectedItemId.toString())
             val newStart = Intent(this, MainActivity::class.java)
             newStart.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK)
             newStart.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
