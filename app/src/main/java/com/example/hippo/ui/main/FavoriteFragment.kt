@@ -12,7 +12,7 @@ class FavoriteFragment : Fragment(){
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val root = inflater.inflate(R.layout.favorite_fragment, container, false)
+        val root = inflater.inflate(R.layout.favorite_list_pane, container, false)
         return root
     }
 }
