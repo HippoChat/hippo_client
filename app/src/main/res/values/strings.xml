@@ -3,16 +3,16 @@
     <string name="reg_phone">Please enter your phone number</string>
     <string name="reg_code">Verification code</string>
     <string name="go">Go!</string>
-    <string name="personalInfo">You can add your real info or make it up\nYou can change it any time in the settings</string>
-    <string name="languageInfo">Select the language you want to chat in\nYou can change it any time in the settings</string>
-    <string name="personalInfoHeader">Personal info</string>
-    <string name="nameHint">Your name</string>
-    <string name="ageHint">Your age</string>
-    <string name="languageHint">Your language</string>
+    <string name="personal_info">You can add your real info or make it up\nYou can change it any time in the settings</string>
+    <string name="language_info">Select the language you want to chat in\nYou can change it any time in the settings</string>
+    <string name="personal_info_header">Personal info</string>
+    <string name="name_hint">Your name</string>
+    <string name="age_hint">Your age</string>
+    <string name="language_hint">Your language</string>
     <string name="tab_1">Chat</string>
     <string name="tab_2">Favorite</string>
     <string name="tab_3">Settings</string>
-    <string name="searchFriend">Let’s search for a new friend!</string>
+    <string name="search_friend">Let’s search for a new friend!</string>
     <string name="search">Search!</string>
     <string name="finish">Want to find a new person?</string>
     <string name="finish_chat">Finish chat</string>
@@ -21,5 +21,6 @@
     <string name="menu_block">Report user</string>
     <string name="search_progress">Searching for a friend...\nPlease, wait</string>
     <string name="save">Save</string>
-    <string name="logout"><u>Sign out</u></string>
+    <string name="logout">Sign out</string>
+    <string name="no_favorite_friends">You do not have favorite friends for now :(</string>
 </resources>
