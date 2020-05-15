@@ -52,8 +52,7 @@
 
     <Button
         android:id="@+id/registrationNameButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/Hippo_Button"
         android:layout_marginTop="@dimen/dp_146"
         android:text="@string/next"
         app:layout_constraintEnd_toEndOf="parent"

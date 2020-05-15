@@ -41,8 +41,7 @@
 
     <Button
         android:id="@+id/registrationPhoneButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/Hippo_Button"
         android:layout_marginTop="@dimen/dp_96"
         android:text="@string/next"
         android:visibility="invisible"

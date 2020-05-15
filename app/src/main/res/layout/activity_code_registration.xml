@@ -41,8 +41,7 @@
 
     <Button
         android:id="@+id/registrationCodeButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/Hippo_Button"
         android:layout_marginTop="@dimen/dp_96"
         android:text="@string/go"
         app:layout_constraintEnd_toEndOf="parent"
