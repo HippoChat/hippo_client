@@ -16,16 +16,16 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <ImageButton
-                android:id="@+id/ibt_avatar"
+            <androidx.fragment.app.FragmentContainerView
+                android:id="@+id/btAvatar"
+                android:name="com.example.hippo.ui.main.AvatarLoadingFragment"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="64dp"
                 android:background="@color/white"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/pic_user_profile" />
+                app:layout_constraintTop_toTopOf="parent" />
 
             <EditText
                 android:id="@+id/tv_name_settings"

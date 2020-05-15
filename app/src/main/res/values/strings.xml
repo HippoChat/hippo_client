@@ -24,4 +24,6 @@
     <string name="save">Save</string>
     <string name="logout">Sign out</string>
     <string name="no_favorite_friends">You do not have favorite friends for now :(</string>
+    <string name="logout"><u>Sign out</u></string>
+    <string name="select_avatar">Select avatar</string>
 </resources>
