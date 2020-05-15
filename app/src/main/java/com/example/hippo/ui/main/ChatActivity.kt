@@ -5,6 +5,7 @@ import android.view.Menu
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.hippo.R
+import com.example.hippo.util.MarginItemDecoration
 import kotlinx.android.synthetic.main.chat_activity.*
 
 
@@ -17,6 +18,11 @@ class ChatActivity : AppCompatActivity() {
         val layoutManager = LinearLayoutManager(this)
         layoutManager.stackFromEnd = true
         rv_messages.layoutManager = layoutManager
+
+        rv_messages.addItemDecoration(
+            MarginItemDecoration(
+            resources.getDimension(R.dimen.dp_8).toInt())
+        )
 
         setSupportActionBar(chatBar)
 

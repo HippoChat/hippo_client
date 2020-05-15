@@ -8,13 +8,16 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.hippo.R
+import com.example.hippo.util.MarginItemDecoration
 import kotlinx.android.synthetic.main.chat_bubble.view.*
+
 
 class ChatMessageAdapter(private var context: Context, private var elements: List<Message>) : RecyclerView.Adapter<ChatMessageAdapter.ViewHolder>() {
     class ViewHolder(val view: View) : RecyclerView.ViewHolder(view)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view: View = LayoutInflater.from(parent.context).inflate(R.layout.chat_bubble, parent, false)
+
         return ViewHolder(view)
     }
 
