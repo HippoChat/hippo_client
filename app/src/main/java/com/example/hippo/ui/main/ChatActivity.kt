@@ -16,11 +16,11 @@ class ChatActivity : AppCompatActivity() {
 
         val layoutManager = LinearLayoutManager(this)
         layoutManager.stackFromEnd = true
-        messages.layoutManager = layoutManager
+        rv_messages.layoutManager = layoutManager
 
         setSupportActionBar(chatBar)
 
-        messages.adapter = ChatMessageAdapter(
+        rv_messages.adapter = ChatMessageAdapter(
             this,
             listOf(Message("Hello", true),
                 Message("Goodbye", false),

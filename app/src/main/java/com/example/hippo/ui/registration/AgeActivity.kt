@@ -12,8 +12,8 @@ class AgeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_age_registration)
-        registrationAgeButton.setOnClickListener {
-            SecurePrefs.putAge(spAgeSettings.selectedItemId.toString())
+        bt_registration_age.setOnClickListener {
+            SecurePrefs.putAge(sp_age_settings.selectedItemId.toString())
             startActivity(Intent(this, LanguageActivity::class.java))
         }
     }

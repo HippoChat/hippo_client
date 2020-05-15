@@ -2,7 +2,6 @@ package com.example.hippo.ui.registration
 
 import android.content.Intent
 import android.os.Bundle
-import android.os.Handler
 import androidx.appcompat.app.AppCompatActivity
 import com.example.hippo.R
 import com.example.hippo.isValidPhone
@@ -16,9 +15,9 @@ class PhoneActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_phone_registration)
-        registrationPhoneButton.setOnClickListener {
-            registrationPhone.validate("Valid phone number required") { s -> s.isValidPhone() }
-            registrationPhone.text.toString().run {
+        bt_registration_phone.setOnClickListener {
+            et_phone.validate("Valid phone number required") { s -> s.isValidPhone() }
+            et_phone.text.toString().run {
                 if(isValidPhone())
                 {
                     SecurePrefs.putNumber(this)

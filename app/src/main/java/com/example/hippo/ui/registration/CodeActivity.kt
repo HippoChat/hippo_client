@@ -13,9 +13,9 @@ class CodeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_code_registration)
-        registrationCodeButton.setOnClickListener {
-            confirmationCode.validate("Wrong code") { s -> s.isValidCode() }
-            if(confirmationCode.text.toString().isValidCode())
+        bt_verification.setOnClickListener {
+            et_verification_code.validate("Wrong code") { s -> s.isValidCode() }
+            if(et_verification_code.text.toString().isValidCode())
             startActivity(Intent(this, PersonalActivity::class.java))
         }
     }

@@ -17,19 +17,19 @@
 
             <androidx.fragment.app.FragmentContainerView
                 android:id="@+id/chat_pane"
-                android:visibility="gone"
                 android:name="com.example.hippo.ui.main.ChatPaneFragment"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:visibility="gone"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView
-                android:id="@+id/ivChatEmpty"
+                android:id="@+id/iv_chat_empty"
                 android:layout_width="200dp"
                 android:layout_height="172dp"
-                android:layout_marginTop="96dp"
+                android:layout_marginTop="@dimen/dp_96"
                 android:visibility="gone"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -37,32 +37,32 @@
                 app:srcCompat="@drawable/pic_no_random_chat" />
 
             <TextView
-                android:id="@+id/tvSearchFriend"
+                android:id="@+id/tv_search_friend"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="48dp"
+                android:layout_marginTop="@dimen/dp_48"
                 android:fontFamily="@font/roboto"
                 android:text="@string/search_friend"
                 android:textAlignment="center"
                 android:textColor="@color/dark"
-                android:textSize="18sp"
+                android:textSize="@dimen/sp_18"
                 android:visibility="gone"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/ivChatEmpty" />
+                app:layout_constraintTop_toBottomOf="@+id/iv_chat_empty" />
 
             <Button
                 android:id="@+id/bt_search"
                 style="@style/Hippo_Button"
-                android:layout_marginTop="72dp"
+                android:layout_marginTop="@dimen/dp_72"
                 android:text="@string/search"
                 android:visibility="gone"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tvSearchFriend" />
+                app:layout_constraintTop_toBottomOf="@id/tv_search_friend" />
 
             <TextView
-                android:id="@+id/tvFinishChat"
+                android:id="@+id/tv_finish_chat"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="228dp"
@@ -70,7 +70,7 @@
                 android:text="@string/finish"
                 android:textAlignment="center"
                 android:textColor="@color/dark"
-                android:textSize="18sp"
+                android:textSize="@dimen/sp_18"
                 android:visibility="gone"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -79,12 +79,12 @@
             <Button
                 android:id="@+id/bt_finish"
                 style="@style/Hippo_Button"
-                android:layout_marginTop="48dp"
+                android:layout_marginTop="@dimen/dp_48"
                 android:text="@string/finish_chat"
                 android:visibility="gone"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tvFinishChat" />
+                app:layout_constraintTop_toBottomOf="@id/tv_finish_chat" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>
 

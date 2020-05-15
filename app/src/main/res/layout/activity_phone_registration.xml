@@ -6,7 +6,7 @@
     android:layout_height="match_parent">
 
     <ImageView
-        android:id="@+id/registrationPic"
+        android:id="@+id/iv_phone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/dp_96"
@@ -16,7 +16,7 @@
         app:srcCompat="@drawable/pic_registration_phone" />
 
     <TextView
-        android:id="@+id/registrationText"
+        android:id="@+id/tv_phone_hint"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/dp_32"
@@ -26,10 +26,10 @@
         app:fontFamily="@font/roboto"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/registrationPic" />
+        app:layout_constraintTop_toBottomOf="@id/iv_phone" />
 
     <EditText
-        android:id="@+id/registrationPhone"
+        android:id="@+id/et_phone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/dp_48"
@@ -37,16 +37,16 @@
         android:inputType="phone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/registrationText" />
+        app:layout_constraintTop_toBottomOf="@id/tv_phone_hint" />
 
     <Button
-        android:id="@+id/registrationPhoneButton"
+        android:id="@+id/bt_registration_phone"
         style="@style/Hippo_Button"
         android:layout_marginTop="@dimen/dp_96"
         android:text="@string/next"
         android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/registrationPhone" />
+        app:layout_constraintTop_toBottomOf="@+id/et_phone" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

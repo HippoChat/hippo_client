@@ -1,11 +1,9 @@
 package com.example.hippo.ui.main
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
@@ -38,11 +36,11 @@ class ChatFragment : Fragment(){
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        ivSearchFriend = view.findViewById(R.id.ivChatEmpty)
-        tvSearch = view.findViewById(R.id.tvSearchFriend)
+        ivSearchFriend = view.findViewById(R.id.iv_chat_empty)
+        tvSearch = view.findViewById(R.id.tv_search_friend)
         btSearch = view.findViewById(R.id.bt_search)
 
-        tvFinishChat = view.findViewById(R.id.tvFinishChat)
+        tvFinishChat = view.findViewById(R.id.tv_finish_chat)
         btFinish = view.findViewById(R.id.bt_finish)
 
         btSearch.setOnClickListener {

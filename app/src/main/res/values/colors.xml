@@ -10,4 +10,5 @@
     <color name="grey">#E1E1E1</color>
     <color name="chatBubbleLight">#E4FAFF</color>
     <color name="chatBubbleDark">#C0D2D7</color>
+    <color name="transparent">#0000</color>
 </resources>

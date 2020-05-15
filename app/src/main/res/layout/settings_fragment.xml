@@ -17,7 +17,7 @@
             android:orientation="vertical">
 
             <ImageButton
-                android:id="@+id/btAvatar"
+                android:id="@+id/ibt_avatar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="64dp"
@@ -28,63 +28,62 @@
                 app:srcCompat="@drawable/pic_user_profile" />
 
             <EditText
-                android:id="@+id/tvNameSettings"
+                android:id="@+id/tv_name_settings"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
+                android:layout_marginTop="@dimen/dp_32"
                 android:ems="10"
                 android:inputType="textPersonName"
-                android:text="Name"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/btAvatar" />
+                app:layout_constraintTop_toBottomOf="@+id/ibt_avatar"
+                tools:text="Name" />
 
             <Spinner
-                android:id="@+id/spAgeSettings"
+                android:id="@+id/sp_age_settings"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="32dp"
+                android:layout_marginTop="@dimen/dp_32"
                 android:entries="@array/age_ranges"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tvNameSettings" />
+                app:layout_constraintTop_toBottomOf="@+id/tv_name_settings" />
 
             <Spinner
-                android:id="@+id/spLanguageSettings"
+                android:id="@+id/sp_language_settings"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="40dp"
+                android:layout_marginTop="@dimen/dp_32"
                 android:entries="@array/languages"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/spAgeSettings" />
+                app:layout_constraintTop_toBottomOf="@+id/sp_age_settings" />
 
             <Button
-                android:id="@+id/btSaveSettings"
+                android:id="@+id/bt_save_settings"
                 style="@style/Hippo_Button"
-                android:layout_marginTop="64dp"
+                android:layout_marginTop="@dimen/dp_64"
                 android:text="@string/save"
                 android:visibility="visible"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/spLanguageSettings" />
+                app:layout_constraintTop_toBottomOf="@id/sp_language_settings" />
 
             <Button
-                android:id="@+id/btLogOut"
+                android:id="@+id/bt_sign_out"
                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="128dp"
                 android:layout_height="48dp"
-                android:layout_marginTop="64dp"
-                android:background="#0000"
+                android:layout_marginTop="@dimen/dp_72"
                 android:fontFamily="@font/roboto"
                 android:text="@string/logout"
                 android:textAllCaps="false"
                 android:textColor="@color/darkBlue"
-                android:textSize="24sp"
+                android:textSize="@dimen/sp_18"
                 android:visibility="visible"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/btSaveSettings" />
+                app:layout_constraintTop_toBottomOf="@id/bt_save_settings" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>
 </LinearLayout>

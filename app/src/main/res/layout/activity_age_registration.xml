@@ -6,57 +6,55 @@
     android:layout_height="match_parent">
 
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/iv_personal_info"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/dp_32"
-        app:layout_constraintBottom_toTopOf="@+id/textView5"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="@dimen/dp_96"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/pic_personal_info" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/tv_personal_info"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/dp_48"
-        android:text="@string/personal_info"
-        android:textColor="@color/grey"
-        android:textSize="@dimen/sp_18"
-        app:layout_constraintBottom_toTopOf="@+id/spAgeSettings"
+        android:text="@string/personal_info_header"
+        android:textSize="@dimen/sp_24"
+        app:layout_constraintTop_toBottomOf="@+id/iv_personal_info"
+        android:layout_marginTop="@dimen/dp_32"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/tv_registration_hint"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:text="@string/personal_info_header"
-        android:textSize="@dimen/sp_24"
-        app:layout_constraintBottom_toTopOf="@+id/textView4"
+        android:text="@string/personal_info"
+        android:textColor="@color/grey"
+        android:textSize="@dimen/sp_18"
+        app:layout_constraintTop_toBottomOf="@id/tv_personal_info"
+        android:layout_marginTop="@dimen/dp_16"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Spinner
-        android:id="@+id/spAgeSettings"
+        android:id="@+id/sp_age_settings"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="340dp"
-        android:layout_marginBottom="300dp"
         android:entries="@array/age_ranges"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_registration_hint"
+        android:layout_marginTop="@dimen/dp_48"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/registrationAgeButton"
+        android:id="@+id/bt_registration_age"
         style="@style/Hippo_Button"
         android:layout_marginTop="@dimen/dp_146"
         android:text="@string/next"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spAgeSettings" />
+        app:layout_constraintTop_toBottomOf="@+id/sp_age_settings" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
