@@ -2,8 +2,8 @@ package com.example.hippo
 
 import android.text.Editable
 import android.text.TextWatcher
-import android.util.Patterns
 import android.widget.EditText
+import java.util.regex.Pattern
 
 fun EditText.validate(message: String, validator: (String) -> Boolean) {
     this.afterTextChanged {
@@ -24,12 +24,16 @@ fun EditText.afterTextChanged(afterTextChanged: (String) -> Unit) {
     })
 }
 
-fun String.isValidPhone(): Boolean
-        = this.isNotEmpty() && Patterns.PHONE.matcher(this).matches()
+// Patterns.PHONE is not suitable for validation
+// So we used https://regex101.com/library/wZ4uU6
+private val phonePattern: Pattern =
+    Pattern.compile("\\+?\\d{1,4}?[-.\\s]?\\(?\\d{1,3}?\\)?[-.\\s]?\\d{1,4}[-.\\s]?\\d{1,4}[-.\\s]?\\d{1,9}")
 
-fun String.isValidCode(): Boolean
-        = this.isNotEmpty() && this.length == 4
+fun String.isValidPhone(): Boolean =
+    this.isNotEmpty() && phonePattern.matcher(this).matches()
 
-fun String.isValidName(): Boolean
-        = this.isNotEmpty() && !this[0].isDigit() 
+fun String.isValidCode(): Boolean = this.isNotEmpty() && this.length == 4
+
+// Sounds like a reasonable name length
+fun String.isValidName(): Boolean = this.isNotEmpty() && this.length < 20
         
