@@ -12,6 +12,7 @@
         android:layout_height="@dimen/dp_64"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/pic_hippo_splash"
         tools:srcCompat="@drawable/pic_hippo_splash" />
 
     <TextView
@@ -19,6 +20,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/dp_16"
+        android:text="User Namovich"
         android:textSize="@dimen/sp_24"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/iv_user_pic"
@@ -31,6 +33,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
+        android:text="Last Message"
         android:textColor="@color/grey"
         android:textSize="@dimen/sp_18"
         app:layout_constraintEnd_toEndOf="parent"

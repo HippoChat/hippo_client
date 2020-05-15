@@ -23,7 +23,7 @@ class ChatMessageAdapter(private var context: Context, private var elements: Lis
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.view.tv_user_last_msg.text = elements[position].message
+        holder.view.tv_msg.text = elements[position].message
         if(elements[position].received) {
             holder.view.backLayout.background.setColorFilter(
                 context.resources.getColor(R.color.chatBubbleDark),

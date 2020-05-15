@@ -8,9 +8,9 @@ import retrofit2.http.GET
 import retrofit2.http.POST
 
 interface ReportService {
-    @POST("/ic_report_user/report")
+    @POST("/ban/report")
     fun reportUser(@Body report_reason: Int, @Body reported_id: Int): Call<Status>
 
-    @GET("/ic_report_user/blocked")
+    @GET("/ban/blocked")
     fun getReported(): Call<Reported>
 }
