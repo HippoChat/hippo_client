@@ -37,7 +37,7 @@ class ImageLoadingFragment : Fragment() {
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         if (requestCode == PICK_IMAGE_ACTIVITY && resultCode == Activity.RESULT_OK && data != null) {
-            // TODO: MAKE NULL-SAFE!!
+            // NOTE: Should be good enough regarding null-safety, not exactly an independent fragment
             val uri: Uri = data.data!!
             val parcelFileDescriptor = activity!!.contentResolver.openFileDescriptor(uri, "r")
             val fileDescriptor: FileDescriptor = parcelFileDescriptor!!.fileDescriptor
