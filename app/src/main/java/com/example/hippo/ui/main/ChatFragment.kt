@@ -53,6 +53,7 @@ class ChatFragment : Fragment(){
             isChatting = false
             changeSearchFriendView() }
 
+        // TODO: PLACEHOLDER?
         chat_pane.setOnClickListener { startActivity(Intent(activity, ChatActivity::class.java)) }
 
         changeSearchFriendView()

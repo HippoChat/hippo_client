@@ -50,4 +50,9 @@ class ChatActivity : AppCompatActivity() {
         inflater.inflate(R.menu.chat_menu, menu)
         return true
     }
+
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true
+    }
 }

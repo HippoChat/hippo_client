@@ -5,4 +5,14 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+    <include
+        layout="@layout/chat_list_pane"
+        android:id="@+id/chat_pane_1"/>
+    <include
+        layout="@layout/chat_list_pane"
+        android:id="@+id/chat_pane_2"/>
+    <include
+        layout="@layout/chat_list_pane"
+        android:id="@+id/chat_pane_3"/>
+
 </LinearLayout>

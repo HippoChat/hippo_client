@@ -20,5 +20,10 @@ class FavoriteFragment : Fragment(){
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        // TODO: PLACEHOLDER?
+        chat_pane_1.setOnClickListener { startActivity(Intent(activity, ChatActivity::class.java)) }
+        chat_pane_2.setOnClickListener { startActivity(Intent(activity, ChatActivity::class.java)) }
+        chat_pane_3.setOnClickListener { startActivity(Intent(activity, ChatActivity::class.java)) }
     }
 }
