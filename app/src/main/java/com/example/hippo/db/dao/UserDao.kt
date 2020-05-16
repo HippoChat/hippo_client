@@ -4,13 +4,14 @@ import UserId
 import androidx.room.*
 import com.example.hippo.db.entity.User
 import io.reactivex.Completable
+import io.reactivex.Flowable
 import io.reactivex.Single
 import java.util.*
 
 @Dao
 interface UserDao {
     @Query("SELECT * FROM users")
-    fun getAll(): Single<List<User>>
+    fun getAll(): Flowable<List<User>>
 
     @Query("SELECT * FROM users WHERE id IN (:userIds)")
     fun loadAllByIds(userIds: IntArray): Single<List<User>>

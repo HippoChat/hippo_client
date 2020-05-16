@@ -5,6 +5,7 @@ import UserId
 import androidx.room.*
 import com.example.hippo.db.entity.Message
 import io.reactivex.Completable
+import io.reactivex.Flowable
 import io.reactivex.Single
 import java.util.*
 
@@ -16,7 +17,7 @@ interface MessageDao {
         WHERE (sender = :peerId OR receiver = :peerId)
         ORDER BY id ASC
     """)
-    fun getChatHistory(peerId: UserId): Single<List<Message>>
+    fun getChatHistory(peerId: UserId): Flowable<List<Message>>
 
     @Query("""
         SELECT *
@@ -25,7 +26,7 @@ interface MessageDao {
         ORDER BY id DESC
         LIMIT 1
     """)
-    fun getLastMessage(peerId: UserId): Single<Optional<Message>>
+    fun getLastMessage(peerId: UserId): Flowable<Optional<Message>>
 
     @Query("SELECT * FROM messages WHERE id = :mid")
     fun getById(mid: MessageId): Single<Optional<Message>>
