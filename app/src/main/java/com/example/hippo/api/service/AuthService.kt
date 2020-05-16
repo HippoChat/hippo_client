@@ -10,7 +10,7 @@ interface AuthService {
     @POST("/auth/send_verification_code")
     fun sendVerificationCode(@Body phone: String)
 
-    @POST("/auth/verify_security_code")
+    @POST("/auth/verify_phone_code")
     fun verifyCode(@Body phone: String, @Body code: String): Single<Status>
 
     @POST("/auth/sign_up")
