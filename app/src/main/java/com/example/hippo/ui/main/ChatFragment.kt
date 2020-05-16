@@ -8,6 +8,7 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
 import com.example.hippo.R
 import kotlinx.android.synthetic.main.chat_fragment.*
 
@@ -36,6 +37,9 @@ class ChatFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        val chat = ChatPaneFragment(0)
+        chat.arguments = savedInstanceState
+
         ivSearchFriend = view.findViewById(R.id.iv_chat_empty)
         tvSearch = view.findViewById(R.id.tv_search_friend)
         btSearch = view.findViewById(R.id.bt_search)
@@ -45,18 +49,18 @@ class ChatFragment : Fragment() {
 
         btSearch.setOnClickListener {
             isChatting = true
-            changeSearchFriendView()
+            changeSearchFriendView(chat, childFragmentManager)
         }
 
         btFinish.setOnClickListener {
             isChatting = false
-            changeSearchFriendView()
+            changeSearchFriendView(chat, childFragmentManager)
         }
 
-        changeSearchFriendView()
+        changeSearchFriendView(chat, childFragmentManager)
     }
 
-    private fun changeSearchFriendView() {
+    private fun changeSearchFriendView(chat: ChatPaneFragment, fragmentManager: FragmentManager) {
         if (isChatting) {
             ivSearchFriend.visibility = View.GONE
             tvSearch.visibility = View.GONE
@@ -65,6 +69,8 @@ class ChatFragment : Fragment() {
             tvFinishChat.visibility = View.VISIBLE
             btFinish.visibility = View.VISIBLE
             chat_pane.visibility = View.VISIBLE
+
+            fragmentManager.beginTransaction().add(R.id.chat_pane, chat).commit()
         } else {
             ivSearchFriend.visibility = View.VISIBLE
             tvSearch.visibility = View.VISIBLE
@@ -73,6 +79,7 @@ class ChatFragment : Fragment() {
             tvFinishChat.visibility = View.GONE
             btFinish.visibility = View.GONE
             chat_pane.visibility = View.GONE
+            fragmentManager.beginTransaction().remove(chat).commit()
         }
     }
 }

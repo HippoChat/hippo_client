@@ -11,7 +11,7 @@ import com.example.hippo.db.entity.Bookmark
 import com.example.hippo.db.entity.Message
 import com.example.hippo.db.entity.User
 
-@Database(entities = [User::class, Message::class, Bookmark::class], version = 2)
+@Database(entities = [User::class, Message::class, Bookmark::class], version = 3)
 abstract class AppDatabase : RoomDatabase() {
     abstract fun userDao(): UserDao
     abstract fun messageDao(): MessageDao

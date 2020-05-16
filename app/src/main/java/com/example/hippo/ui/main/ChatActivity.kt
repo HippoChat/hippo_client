@@ -4,6 +4,7 @@ import android.graphics.Color
 import android.os.Bundle
 import android.text.SpannableString
 import android.text.style.ForegroundColorSpan
+import android.util.Log
 import android.view.Menu
 import android.widget.EditText
 import android.widget.ImageButton
@@ -11,7 +12,10 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.hippo.R
+import com.example.hippo.db.entity.Message
+import com.example.hippo.db.getAppDatabaseInstance
 import com.example.hippo.util.MarginItemDecoration
+import com.example.hippo.util.subscribeIoObserveMain
 import kotlinx.android.synthetic.main.chat_activity.*
 
 
@@ -19,6 +23,8 @@ class ChatActivity : AppCompatActivity() {
 
     private lateinit var etMessageField: EditText
     private lateinit var ibtSend: ImageButton
+    private var messageList: ArrayList<Message> = arrayListOf()
+    private var messageAdapter: ChatMessageAdapter = ChatMessageAdapter(this, messageList)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,40 +42,19 @@ class ChatActivity : AppCompatActivity() {
 
         setSupportActionBar(chatBar)
 
-        rv_messages.adapter = ChatMessageAdapter(
-            this,
-            listOf(
-                Message("Hello", true),
-                Message("Goodbye", false),
-                Message(
-                    "Really Long Message, Like hecking long, as in, extremely fucking long long long message of longness",
-                    false
-                ),
-                Message("Hello", true),
-                Message("Hello", true),
-                Message("Hello", true),
-                Message("Hello", true),
-                Message("Hello", true),
-                Message("Hello", true),
-                Message("Hello", true),
-                Message("Hello", true),
-                Message("Hello", true),
-                Message("Hello", false),
-                Message("Hello", true),
-                Message("Hello", false),
-                Message("Hello", true),
-                Message("Hello", true),
-                Message("Hello", true),
-                Message("Hello", true),
-                Message("Hello", true),
-                Message("Hello", true)
-            )
-        )
+        rv_messages.adapter = messageAdapter
+        val id: Int = intent.getIntExtra("id", 0)
+        getAppDatabaseInstance().messageDao().getChatHistory(id)
+            .subscribeIoObserveMain()
+            .subscribe {
+                messageList.addAll(it)
+                messageAdapter.notifyDataSetChanged()
+            }
 
         etMessageField = findViewById(R.id.et_message_field)
         ibtSend = findViewById(R.id.ibt_send)
 
-        ibtSend.setOnClickListener{
+        ibtSend.setOnClickListener {
 //            TODO: send message to server
             val t = Toast.makeText(this, "Your message was sent :)", Toast.LENGTH_LONG)
             t.show()

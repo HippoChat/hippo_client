@@ -11,6 +11,7 @@ import com.example.hippo.ui.SecurePrefs
 import com.example.hippo.ui.registration.PhoneActivity
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
+import org.json.JSONObject
 
 // A splash screen - shows itself for 2 seconds, then passes the execution to a different Activity
 class SplashActivity : AppCompatActivity() {
@@ -18,6 +19,7 @@ class SplashActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
+
         Handler().postDelayed({
             val start: Intent = if (SecurePrefs.getToken()!!.isNotEmpty()) {
                 Intent(this, MainActivity::class.java)

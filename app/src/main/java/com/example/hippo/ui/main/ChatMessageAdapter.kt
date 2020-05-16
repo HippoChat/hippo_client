@@ -8,7 +8,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.hippo.R
-import com.example.hippo.util.MarginItemDecoration
+import com.example.hippo.db.entity.Message
+import com.example.hippo.ui.SecurePrefs
 import kotlinx.android.synthetic.main.chat_bubble.view.*
 
 
@@ -29,7 +30,7 @@ class ChatMessageAdapter(private var context: Context, private var elements: Lis
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.view.tv_msg.text = elements[position].message
-        if (elements[position].received) {
+        if (elements[position].sender != SecurePrefs.getId()) {
             holder.view.backLayout.background.setColorFilter(
                 context.resources.getColor(R.color.chatBubbleDark),
                 PorterDuff.Mode.SRC_IN
