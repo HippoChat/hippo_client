@@ -19,7 +19,7 @@ class SplashActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
         Handler().postDelayed({
-            var start: Intent = if (SecurePrefs.getToken()!!.isNotEmpty()) {
+            val start: Intent = if (SecurePrefs.getToken()!!.isNotEmpty()) {
                 Intent(this, MainActivity::class.java)
             } else {
                 Intent(this, PhoneActivity::class.java)

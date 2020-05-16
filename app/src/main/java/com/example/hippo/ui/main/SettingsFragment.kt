@@ -17,6 +17,7 @@ import com.example.hippo.api.model.User
 import com.example.hippo.api.model.UserInfo
 import com.example.hippo.ui.SecurePrefs
 import com.example.hippo.ui.registration.RegistrationUtils
+import com.example.hippo.util.subscribeIoObserveMain
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 import kotlinx.android.synthetic.main.settings_fragment.*
@@ -39,8 +40,7 @@ class SettingsFragment : Fragment() {
     private fun initData(context: Context) {
         val regUtils = RegistrationUtils(context)
         RestClient.instance.userService.getInfo(SecurePrefs.getId())
-            .subscribeOn(Schedulers.io())
-            .observeOn(AndroidSchedulers.mainThread())
+            .subscribeIoObserveMain()
             .subscribe({ result: User ->
                 et_name_settings.setText(result.user.name)
                 sp_age_settings.setSelection(regUtils.ageToSelection(result.user.age_group))

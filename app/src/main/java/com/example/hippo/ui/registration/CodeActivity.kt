@@ -9,9 +9,8 @@ import com.example.hippo.api.RestClient
 import com.example.hippo.api.model.PhoneCode
 import com.example.hippo.isValidCode
 import com.example.hippo.ui.SecurePrefs
+import com.example.hippo.util.subscribeIoObserveMain
 import com.example.hippo.validate
-import io.reactivex.android.schedulers.AndroidSchedulers
-import io.reactivex.schedulers.Schedulers
 import kotlinx.android.synthetic.main.activity_code_registration.*
 
 class CodeActivity : AppCompatActivity() {
@@ -24,8 +23,7 @@ class CodeActivity : AppCompatActivity() {
             et_verification_code.text.toString().run {
                 // TODO: ERROR CHECKING
                 RestClient.instance.authService.verifyCode(PhoneCode(SecurePrefs.getNumber(), this))
-                    .subscribeOn(Schedulers.io())
-                    .observeOn(AndroidSchedulers.mainThread())
+                    .subscribeIoObserveMain()
                     .subscribe({}, { error -> Log.e("HIPPO", error.message) })
                 SecurePrefs.putCode(this)
                 val newStart = Intent(baseContext, PersonalActivity::class.java)
