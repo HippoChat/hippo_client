@@ -4,19 +4,15 @@
         <item>English</item>
         <item>Russian</item>
         <item>French</item>
-        <item>German</item>
         <item>Spanish</item>
         <item>Italian</item>
-        <item>Chinese</item>
     </string-array>
 
     <string-array name="languages_api">
         <item>en-US</item>
         <item>ru-RU</item>
         <item>fr-FR</item>
-        <item>de-DE</item>
         <item>es-ES</item>
         <item>it-IT</item>
-        <item>zh-CN</item>
     </string-array>
 </resources>
