@@ -9,12 +9,12 @@ import retrofit2.http.POST
 import retrofit2.http.Path
 
 interface FavoritesService {
-    @GET("/bookmark")
+    @GET("bookmark")
     fun getFavorites() : Call<Favorites>
 
-    @POST("/bookmark/{id}")
+    @POST("bookmark/{id}")
     fun addFavorite(@Path ("id") id: Int): Call<Status>
 
-    @DELETE("/bookmark/{id}")
+    @DELETE("bookmark/{id}")
     fun removeFavorite(@Path ("id") id: Int): Call<Status>
 }

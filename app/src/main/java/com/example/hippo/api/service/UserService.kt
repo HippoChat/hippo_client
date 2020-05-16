@@ -11,7 +11,7 @@ import retrofit2.http.POST
 import retrofit2.http.Path
 
 interface UserService {
-    @POST("/user/set_info")
+    @POST("user/set_info")
     fun setInfo(
         @Body id: Int,
         @Body name: String,
@@ -20,9 +20,9 @@ interface UserService {
         @Body image: String
     ): Call<SignUp>
 
-    @GET("/user/{id}")
+    @GET("user/{id}")
     fun getInfo(@Path("id") id: Int): Call<UserInfo>
 
-    @POST("/user/wait_for_partner")
+    @POST("user/wait_for_partner")
     fun waitForPartner(): Observable<PartnerInfo>
 }

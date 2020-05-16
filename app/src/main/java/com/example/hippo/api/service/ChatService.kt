@@ -8,7 +8,7 @@ import retrofit2.http.Body
 import retrofit2.http.POST
 
 interface ChatService {
-    @POST("/chat/send_message")
+    @POST("chat/send_message")
     fun sendMessage(
         @Body receiver_id: Int,
         @Body message: String,
@@ -16,6 +16,6 @@ interface ChatService {
         @Body reply_to_message_id: Int
     ): Call<Message>
 
-    @POST("/chat/messages")
+    @POST("chat/messages")
     fun getMessages(): Observable<Messages>
 }
