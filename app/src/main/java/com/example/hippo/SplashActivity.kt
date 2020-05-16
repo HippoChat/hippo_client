@@ -7,6 +7,7 @@ import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.example.hippo.api.RestClient
 import com.example.hippo.api.model.PhoneNumber
+import com.example.hippo.ui.SecurePrefs
 import com.example.hippo.ui.registration.PhoneActivity
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
@@ -18,7 +19,11 @@ class SplashActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
         Handler().postDelayed({
-            val start = Intent(this, PhoneActivity::class.java)
+            var start: Intent = if (SecurePrefs.getToken()!!.isNotEmpty()) {
+                Intent(this, MainActivity::class.java)
+            } else {
+                Intent(this, PhoneActivity::class.java)
+            }
             start.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK)
             start.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
             startActivity(start)

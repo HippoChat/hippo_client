@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.hippo.MainActivity
 import com.example.hippo.R
 import com.example.hippo.api.RestClient
+import com.example.hippo.api.model.SignUp
 import com.example.hippo.api.model.SignUpData
 import com.example.hippo.ui.SecurePrefs
 import io.reactivex.android.schedulers.AndroidSchedulers
@@ -25,7 +26,10 @@ class LanguageActivity : AppCompatActivity() {
             RegistrationUtils(this).signUp()
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe({}, { error -> Log.e("HIPPO", error.message) })
+                .subscribe({ result: SignUp ->
+                    SecurePrefs.putId(result.me!!.public.id)
+                    SecurePrefs.putToken(result.me.private.token)
+                }, { error -> Log.e("HIPPO", error.message) })
             val newStart = Intent(this, MainActivity::class.java)
             newStart.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK)
             newStart.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)

@@ -16,6 +16,8 @@ import kotlinx.android.synthetic.main.image_loading_fragment.*
 import java.io.FileDescriptor
 
 class AvatarLoadingFragment : Fragment() {
+    private var imageString: String = ""
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -37,17 +39,27 @@ class AvatarLoadingFragment : Fragment() {
             val parcelFileDescriptor = activity!!.contentResolver.openFileDescriptor(uri, "r")
             val fileDescriptor: FileDescriptor = parcelFileDescriptor!!.fileDescriptor
 
-            // Using setImageBitmap here to make sure the user sees the image as it's supposed to be
+            imageString = ImageEncoder.instance.encodeImage(fileDescriptor)
+
+            // Using setImage here to make sure the user sees the image as it's supposed to be
             // I have suspicions that encoding changes the colors somewhat due to JPEG recoding
             // However, I am not good with colors or design, so maybe I'm wrong
-            avatar.setImageBitmap(
-                ImageEncoder.instance.decodeImage(
-                    ImageEncoder.instance.encodeImage(
-                        fileDescriptor
-                    )
-                )
-            )
+            setImage(imageString)
         }
+    }
+
+    fun getImageString(): String {
+        return imageString
+    }
+
+    fun setImage(imageBase64: String) {
+        imageString = imageBase64
+
+        avatar.setImageBitmap(
+            ImageEncoder.instance.decodeImage(
+                imageString
+            )
+        )
     }
 
     private fun imagePickingActivity() {

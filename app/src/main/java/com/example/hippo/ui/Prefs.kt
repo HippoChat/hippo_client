@@ -32,7 +32,7 @@ object SecurePrefs {
         sharedPreferences.edit().putString(tokenKey, myToken).apply()
     }
 
-    fun getToken() = sharedPreferences.getString(tokenKey, "NONE")
+    fun getToken() = sharedPreferences.getString(tokenKey, "")
 
     fun putNumber(number: String) {
         sharedPreferences.edit().putString(numberKey, number).apply()

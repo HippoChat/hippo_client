@@ -2,6 +2,7 @@ package com.example.hippo.api
 
 import com.example.hippo.BuildConfig
 import com.example.hippo.api.service.*
+import com.example.hippo.ui.SecurePrefs
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import okhttp3.Response
@@ -18,8 +19,12 @@ class RestClient {
         addInterceptor(object : Interceptor {
             override fun intercept(chain: Interceptor.Chain): Response {
                 val original = chain.request()
+                val token = SecurePrefs.getToken()
+
+                // Tokens don't have an expiration time, no need for an authenticator
                 val requestBuilder = original.newBuilder()
                     .header("Content-Type", "application/json")
+                    .header("Authorization", "Bearer $token")
 
                 val request = requestBuilder.build()
                 return chain.proceed(request)
