@@ -13,7 +13,7 @@ class AgeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_age_registration)
         bt_registration_age.setOnClickListener {
-            SecurePrefs.putAge(sp_age_settings.selectedItemId.toString())
+            SecurePrefs.putAge(sp_age_settings.selectedItemId.toInt())
             startActivity(Intent(this, LanguageActivity::class.java))
         }
     }

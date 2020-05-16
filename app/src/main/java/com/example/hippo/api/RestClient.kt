@@ -2,7 +2,9 @@ package com.example.hippo.api
 
 import com.example.hippo.BuildConfig
 import com.example.hippo.api.service.*
+import okhttp3.Interceptor
 import okhttp3.OkHttpClient
+import okhttp3.Response
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
@@ -13,6 +15,16 @@ class RestClient {
         connectTimeout(60, TimeUnit.SECONDS)
         readTimeout(60, TimeUnit.SECONDS)
         writeTimeout(60, TimeUnit.SECONDS)
+        addInterceptor(object : Interceptor {
+            override fun intercept(chain: Interceptor.Chain): Response {
+                val original = chain.request()
+                val requestBuilder = original.newBuilder()
+                    .header("Content-Type", "application/json")
+
+                val request = requestBuilder.build()
+                return chain.proceed(request)
+            }
+        })
     }
 
     private val retrofit = Retrofit.Builder().apply {

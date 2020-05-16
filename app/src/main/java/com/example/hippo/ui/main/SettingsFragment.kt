@@ -27,8 +27,8 @@ class SettingsFragment : Fragment(){
 
     private fun initData(){
         et_name_settings.setText(SecurePrefs.getName())
-        sp_age_settings.setSelection(SecurePrefs.getAge().toInt())
-        sp_language_settings.setSelection(SecurePrefs.getLanguage().toInt())
+        sp_age_settings.setSelection(SecurePrefs.getAge())
+        sp_language_settings.setSelection(SecurePrefs.getLanguage())
     }
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
