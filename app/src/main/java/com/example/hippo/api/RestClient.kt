@@ -13,7 +13,6 @@ class RestClient {
         connectTimeout(60, TimeUnit.SECONDS)
         readTimeout(60, TimeUnit.SECONDS)
         writeTimeout(60, TimeUnit.SECONDS)
-        authenticator(TokenAuthenticator())
     }
 
     private val retrofit = Retrofit.Builder().apply {

@@ -3,8 +3,13 @@ package com.example.hippo
 import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
+import com.example.hippo.api.RestClient
+import com.example.hippo.api.model.PhoneNumber
 import com.example.hippo.ui.registration.PhoneActivity
+import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.schedulers.Schedulers
 
 // A splash screen - shows itself for 2 seconds, then passes the execution to a different Activity
 class SplashActivity : AppCompatActivity() {

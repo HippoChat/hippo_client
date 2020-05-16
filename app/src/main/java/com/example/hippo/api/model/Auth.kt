@@ -37,3 +37,8 @@ data class PrivateInfo(
     val phone: String,
     val token: String
 ) : Parcelable
+
+@Parcelize
+data class PhoneNumber(
+    val phone: String
+) : Parcelable
