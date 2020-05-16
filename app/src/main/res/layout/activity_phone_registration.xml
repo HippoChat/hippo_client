@@ -7,7 +7,7 @@
 
     <ImageView
         android:id="@+id/iv_phone"
-        android:layout_width="wrap_content"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/dp_96"
         app:layout_constraintEnd_toEndOf="parent"
@@ -28,16 +28,29 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/iv_phone" />
 
-    <EditText
-        android:id="@+id/et_phone"
+    <TextView
+        android:id="@+id/tv_plus"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/dp_48"
-        android:ems="10"
-        android:inputType="phone"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="60dp"
+        android:text="+"
+        app:layout_constraintEnd_toStartOf="@id/et_phone"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_phone_hint" />
+        app:layout_constraintTop_toBottomOf="@id/tv_phone_hint"
+        app:layout_constraintHorizontal_chainStyle="packed"/>
+
+    <EditText
+        android:id="@+id/et_phone"
+        android:layout_width="@dimen/dp_146"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_48"
+        android:inputType="phone"
+        android:maxLength="20"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tv_plus"
+        app:layout_constraintTop_toBottomOf="@id/tv_phone_hint"
+        app:layout_constraintHorizontal_chainStyle="packed"/>
+
 
     <Button
         android:id="@+id/bt_registration_phone"

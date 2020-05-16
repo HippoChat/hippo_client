@@ -27,7 +27,8 @@ fun EditText.afterTextChanged(afterTextChanged: (String) -> Unit) {
 // Patterns.PHONE is not suitable for validation
 // So we used https://regex101.com/library/wZ4uU6
 private val phonePattern: Pattern =
-    Pattern.compile("\\+?\\d{1,4}?[-.\\s]?\\(?\\d{1,3}?\\)?[-.\\s]?\\d{1,4}[-.\\s]?\\d{1,4}[-.\\s]?\\d{1,9}")
+//    Pattern.compile("\\+?\\d{1,4}?[-.\\s]?\\(?\\d{1,3}?\\)?[-.\\s]?\\d{1,4}[-.\\s]?\\d{1,4}[-.\\s]?\\d{1,9}")
+    Pattern.compile("[0-9]{7,20}")
 
 fun String.isValidPhone(): Boolean =
     this.isNotEmpty() && phonePattern.matcher(this).matches()
