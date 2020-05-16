@@ -21,12 +21,12 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-            buildConfigField "String", "BASE_URL", "\"http://10.0.3.2:8080/api/\""
-            buildConfigField "String", "SOCK_URL", "\"http://10.0.3.2:8080/\""
+            buildConfigField "String", "BASE_URL", "\"http://ratijas.tk:9022/api/\""
+            buildConfigField "String", "SOCK_URL", "\"http://ratijas.tk:9022/\""
         }
         debug {
-            buildConfigField "String", "BASE_URL", "\"http://10.0.3.2:8080/api/\""
-            buildConfigField "String", "SOCK_URL", "\"http://10.0.3.2:8080/\""
+            buildConfigField "String", "BASE_URL", "\"http://ratijas.tk:9022/api/\""
+            buildConfigField "String", "SOCK_URL", "\"http://ratijas.tk:9022/\""
         }
     }
 }
