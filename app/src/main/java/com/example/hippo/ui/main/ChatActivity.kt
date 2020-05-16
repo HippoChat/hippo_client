@@ -1,7 +1,11 @@
 package com.example.hippo.ui.main
 
+import android.graphics.Color
 import android.os.Bundle
+import android.text.SpannableString
+import android.text.style.ForegroundColorSpan
 import android.view.Menu
+import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.hippo.R
@@ -61,6 +65,22 @@ class ChatActivity : AppCompatActivity() {
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         val inflater = menuInflater
         inflater.inflate(R.menu.chat_menu, menu)
+
+        val item1 = menu?.getItem(0)
+        val item2 = menu?.getItem(1)
+        val item3 = menu?.getItem(2)
+        val s1 = SpannableString("Finish chat")
+        val s2 = SpannableString("Add to friends")
+        val s3 = SpannableString("Report user")
+        s1.setSpan(ForegroundColorSpan(Color.WHITE), 0, s1.length, 0)
+        s2.setSpan(ForegroundColorSpan(Color.WHITE), 0, s2.length, 0)
+        s3.setSpan(ForegroundColorSpan(Color.WHITE), 0, s3.length, 0)
+        if (item1 != null && item2 != null && item3 != null) {
+            item1.title = s1
+            item2.title = s2
+            item3.title = s3
+        }
+
         return true
     }
 
