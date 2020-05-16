@@ -25,7 +25,9 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="Enter a message"
-        android:inputType="textPersonName"
+        android:inputType="text"
+        android:layout_marginStart="@dimen/dp_16"
+        android:layout_marginEnd="@dimen/dp_16"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/ibt_send"
         app:layout_constraintStart_toStartOf="parent" />

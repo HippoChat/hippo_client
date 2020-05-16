@@ -5,7 +5,9 @@ import android.os.Bundle
 import android.text.SpannableString
 import android.text.style.ForegroundColorSpan
 import android.view.Menu
-import android.view.MenuItem
+import android.widget.EditText
+import android.widget.ImageButton
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.hippo.R
@@ -14,6 +16,9 @@ import kotlinx.android.synthetic.main.chat_activity.*
 
 
 class ChatActivity : AppCompatActivity() {
+
+    private lateinit var etMessageField: EditText
+    private lateinit var ibtSend: ImageButton
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -60,6 +65,15 @@ class ChatActivity : AppCompatActivity() {
                 Message("Hello", true)
             )
         )
+
+        etMessageField = findViewById(R.id.et_message_field)
+        ibtSend = findViewById(R.id.ibt_send)
+
+        ibtSend.setOnClickListener{
+//            TODO: send message to server
+            val t = Toast.makeText(this, "Your message was sent :)", Toast.LENGTH_LONG)
+            t.show()
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -88,4 +102,5 @@ class ChatActivity : AppCompatActivity() {
         onBackPressed()
         return true
     }
+
 }

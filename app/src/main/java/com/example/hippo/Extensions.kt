@@ -35,5 +35,5 @@ fun String.isValidPhone(): Boolean =
 fun String.isValidCode(): Boolean = this.isNotEmpty() && this.length == 4
 
 // Sounds like a reasonable name length
-fun String.isValidName(): Boolean = this.isNotEmpty() && this.length < 20
+fun String.isValidName(): Boolean = this.isNotEmpty() && this.length < 32
         
