@@ -17,7 +17,7 @@
             android:orientation="vertical">
 
             <androidx.fragment.app.FragmentContainerView
-                android:id="@+id/btAvatar"
+                android:id="@+id/ibt_avatar"
                 android:name="com.example.hippo.ui.main.AvatarLoadingFragment"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
