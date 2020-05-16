@@ -11,11 +11,17 @@ import android.widget.ImageButton
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.hippo.App
 import com.example.hippo.R
+import com.example.hippo.api.model.SendMessage
 import com.example.hippo.db.entity.Message
 import com.example.hippo.db.getAppDatabaseInstance
+import com.example.hippo.ui.SecurePrefs
 import com.example.hippo.util.MarginItemDecoration
 import com.example.hippo.util.subscribeIoObserveMain
+import com.google.gson.Gson
+import io.reactivex.Flowable
+import io.reactivex.android.schedulers.AndroidSchedulers
 import kotlinx.android.synthetic.main.chat_activity.*
 
 
@@ -43,22 +49,30 @@ class ChatActivity : AppCompatActivity() {
         setSupportActionBar(chatBar)
 
         rv_messages.adapter = messageAdapter
-        val id: Int = intent.getIntExtra("id", 0)
-        getAppDatabaseInstance().messageDao().getChatHistory(id)
-            .subscribeIoObserveMain()
-            .subscribe {
-                messageList.addAll(it)
-                messageAdapter.notifyDataSetChanged()
-            }
+        val peerId: Int = intent.getIntExtra("id", 0)
 
         etMessageField = findViewById(R.id.et_message_field)
         ibtSend = findViewById(R.id.ibt_send)
 
         ibtSend.setOnClickListener {
-//            TODO: send message to server
-            val t = Toast.makeText(this, "Your message was sent :)", Toast.LENGTH_LONG)
-            t.show()
+            val message = SendMessage(peerId, etMessageField.text.toString())
+            (application as App).socket.emit("sendMessage", Gson().toJson(message))
+            application.getAppDatabaseInstance().messageDao().insert(
+                Message(
+                    sender = SecurePrefs.getId(),
+                    receiver = peerId,
+                    message = etMessageField.text.toString()
+                )
+            ).subscribe()
+            etMessageField.text.clear()
         }
+
+        getAppDatabaseInstance().messageDao().getChatHistory(peerId)
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe {
+                messageList.addAll(it)
+                messageAdapter.notifyDataSetChanged()
+            }
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {

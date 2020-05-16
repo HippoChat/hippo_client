@@ -30,7 +30,10 @@ class ChatPaneFragment(val peerId: Int) : Fragment() {
 
         db.getLastMessage(peerId)
             .subscribeIoObserveMain()
-            .subscribe { msg: Optional<Message> -> tv_user_last_msg.text = msg.get().message }
+            .subscribe { msg: Optional<Message> ->
+                if (msg.isPresent)
+                    tv_user_last_msg.text = msg.get().message
+            }
 
         return root
     }

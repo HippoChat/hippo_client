@@ -4,6 +4,12 @@ import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize
 
 @Parcelize
+data class SendMessage(
+    val receiver_id: Int,
+    val message: String
+) : Parcelable
+
+@Parcelize
 data class Message(
     val status: Int,
     val error_message: String?,

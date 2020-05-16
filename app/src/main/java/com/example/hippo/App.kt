@@ -28,9 +28,4 @@ class App : Application() {
         }
         socket.on("userInfo") {}
     }
-
-    fun getAppSocket(): Socket {
-        return socket
-    }
-
 } 
