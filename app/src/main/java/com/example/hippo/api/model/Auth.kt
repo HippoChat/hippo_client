@@ -42,3 +42,18 @@ data class PrivateInfo(
 data class PhoneNumber(
     val phone: String
 ) : Parcelable
+
+@Parcelize
+data class PhoneCode(
+    val phone: String,
+    val code: String
+) : Parcelable
+
+@Parcelize
+data class SignUpData(
+    val phone: String,
+    val code: String,
+    val name: String,
+    val age_group: String,
+    val language: String
+) : Parcelable

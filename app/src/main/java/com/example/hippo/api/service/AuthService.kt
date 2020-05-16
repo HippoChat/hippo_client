@@ -1,8 +1,6 @@
 package com.example.hippo.api.service
 
-import com.example.hippo.api.model.PhoneNumber
-import com.example.hippo.api.model.SignUp
-import com.example.hippo.api.model.Status
+import com.example.hippo.api.model.*
 import io.reactivex.Completable
 import io.reactivex.Single
 import retrofit2.http.Body
@@ -13,16 +11,11 @@ interface AuthService {
     fun sendVerificationCode(@Body phone: PhoneNumber) : Completable
 
     @POST("auth/verify_phone_code")
-    fun verifyCode(@Body phone: String, @Body code: String): Single<Status>
+    fun verifyCode(@Body phoneCode: PhoneCode): Single<Status>
 
     @POST("auth/sign_up")
-    fun signUp(@Body phone: String,
-        @Body code: String,
-        @Body name: String,
-        @Body age_group: String,
-        @Body language: String
-    ) : Single<SignUp>
+    fun signUp(@Body signUpData: SignUpData) : Single<SignUp>
 
     @POST("auth/logout")
-    fun logout(@Body id: Int) : Single<Status>
+    fun logout() : Single<Status>
 }
